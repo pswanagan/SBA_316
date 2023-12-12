@@ -13,17 +13,27 @@
     <p class="story-box"></p>
     <div>
        <form action="">
-        <label for="charName">Please Enter Character's Name: </label><input type="text" name="charName" id="charName"><br>
-        <label for="noun">Please Enter a Noun: </label><input type="text" name="noun" id="noun"><br>
-        <label for="adjective">Please Enter an Adjective: </label><input type="text" name="adjective" id="adjective"><br>
-        <label for="ingVerb">Please Enter a Verb ending in "ing": </label><input type="text" name="ingVerb" id="ingVerb"><br>
-        <label for="plNoun">Please Enter a Noun in plural form: </label><input type="text" name="plNoun" id="plNoun"><br>
-        <label for="trait">Please Enter a Character trait: </label><input type="text" name="trait" id="trait"><br><br>
+        <label for="charName">Please Enter Character's Name: </label><input type="text" name="charName" id="charName" required><br>
+        <label for="noun">Please Enter a Noun: </label><input type="text" name="noun" id="noun" required><br>
+        <label for="adjective">Please Enter an Adjective: </label><input type="text" name="adjective" id="adjective" required><br>
+        <label for="ingVerb">Please Enter a Verb ending in "ing": </label><input type="text" name="ingVerb" id="ingVerb" required><br>
+        <label for="plNoun">Please Enter a Noun in plural form: </label><input type="text" name="plNoun" id="plNoun" required><br>
+        <label for="trait">Please Enter a Character trait: </label><input type="text" name="trait" id="trait" required><br>
+        <label for="colors">Choose a Background Color:</label>
+
+<select name="colors" id="colors">
+  <option value="forestGreen">Forest Green</option>
+  <option value="tan">Tan</option>
+  <option value="deepSkyBlue">Deep Sky Blue</option>
+  <option value="lavender">Lavender</option>
+</select>
+<br><br><br>
         <input type="submit" value="Submit" ><input type="reset" value="Reset">
     </form>
     </div>
     <div>
         
+
     </div>
 </body>
 </html>
