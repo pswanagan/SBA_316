@@ -9,6 +9,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const traitInput = document.getElementById('trait');
     const storyBox = document.querySelector('.story-box');
     const colorSelect = document.getElementById('colors');
+    // Function to save the story to local storage
+    function saveStoryToLocalStorage(story) {
+        // Check if 'stories' array exists in local storage
+        let stories = localStorage.getItem('stories');
+        if (!stories) {
+            stories = [];
+        } else {
+            stories = JSON.parse(stories);
+        }
+
+        // Add the new story to the array
+        stories.push(story);
+
+        // Save the updated array back to local storage
+        localStorage.setItem('stories', JSON.stringify(stories));
+    }
 
     // Handle form submission
     const form = document.querySelector('form');
@@ -33,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 With a heart full of ${trait}, ${charName} set off into the forest. The towering trees whispered secrets, and the leaves crunched beneath their feet as they journeyed deeper and deeper. Soon, they stumbled upon a hidden ${noun}. Inside, they discovered a magical ${plNoun}. As they touched it, the world around them transformed into brilliant shades of ${selectedColor}.
 
 The forest had granted ${charName}'s deepest wish, and their adventure had only just begun.`;
-
+    
         
 
         // Create a new image element
@@ -65,6 +81,9 @@ The forest had granted ${charName}'s deepest wish, and their adventure had only 
         
         // Display the story in the story-box
         storyBox.textContent = story;
+
+        // Save the story to local storage
+        saveStoryToLocalStorage(story);
 
         // Change the background color based on user selection
         document.body.style.backgroundColor = selectedColor;
